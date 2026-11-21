@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toldos e Estofados Boa Vista - Alterosa/MG</title>
+  <meta name="description" content="Toldos de mola automática e reforma de estofados em Alterosa-MG. Atendemos toda a região, buscamos e entregamos em qualquer cidade.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <a href="#inicio" class="marca">Toldos e Estofados <span>Boa Vista</span></a>
+  <button id="btnMenu" class="menu-btn" aria-label="Abrir menu">☰</button>
+  <nav id="menu">
+    <a href="#toldos">Tipos de toldos</a>
+    <a href="#servicos">Serviços realizados</a>
+    <a href="#tecidos">Tecidos e materiais</a>
+    <a href="#contato">Contato</a>
+    <a href="#conta" id="linkConta">Entrar / Cadastrar</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+  <div class="hero-txt">
+    <h1>Toldos e Estofados Boa Vista</h1>
+    <p class="local">Alterosa - MG</p>
+    <p>Toldos de mola automática e reforma de sofás, poltronas e cadeiras. Qualidade, preço bom, e a gente busca e entrega em qualquer cidade da região.</p>
+    <div class="botoes">
+      <a class="btn zap" href="https://wa.me/5535998597550?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn sec" href="#servicos">Ver serviços realizados</a>
+    </div>
+  </div>
+  <img class="hero-img" src="img/logo.png" alt="Logo Toldos e Estofados Boa Vista">
+</section>
+
+<section id="toldos" class="secao">
+  <h2>Tipos de toldos</h2>
+  <p class="sub">Nossos toldos são de mola automática. Fale com a gente pra escolher o modelo e a cor que combinam com o seu espaço.</p>
+  <form class="admin-form" data-sec="toldos" hidden></form>
+  <div class="grade" id="grade-toldos"></div>
+</section>
+
+<section id="servicos" class="secao alt">
+  <h2>Serviços realizados</h2>
+  <p class="sub">Alguns trabalhos que já fizemos.</p>
+  <form class="admin-form" data-sec="servicos" hidden></form>
+  <div class="grade" id="grade-servicos"></div>
+</section>
+
+<section id="tecidos" class="secao">
+  <h2>Tecidos e materiais</h2>
+  <p class="sub">Trabalhamos com vários tecidos e materiais. Se você quer um específico, é só pedir.</p>
+  <form class="admin-form" data-sec="tecidos" hidden></form>
+  <div class="grade" id="grade-tecidos"></div>
+</section>
+
+<section id="contato" class="secao alt">
+  <h2>Contato</h2>
+  <p class="sub">Atendemos Alterosa e toda a região. Chame no WhatsApp ou deixe sua mensagem aqui.</p>
+  <div class="contato-grid">
+    <div class="contato-info">
+      <p><strong>WhatsApp:</strong><br><a href="https://wa.me/5535998597550" target="_blank" rel="noopener">(35) 99859-7550</a></p>
+      <p><strong>Celular:</strong><br><a href="tel:+5535997061813">(35) 99706-1813</a></p>
+      <p><strong>Cidade:</strong><br>Alterosa - MG</p>
+      <p>Buscamos e entregamos em qualquer cidade.</p>
+    </div>
+    <form id="formContato" class="form">
+      <label>Seu nome<input name="nome" required maxlength="80" autocomplete="name"></label>
+      <label>Telefone / WhatsApp<input name="telefone" maxlength="30" autocomplete="tel" inputmode="tel"></label>
+      <label>Mensagem<textarea name="mensagem" rows="4" required maxlength="1500" placeholder="Conta o que você precisa: toldo, reforma de sofá..."></textarea></label>
+      <button class="btn zap" type="submit">Enviar mensagem</button>
+      <p class="aviso" id="msgContato" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section id="conta" class="secao">
+  <h2>Minha conta</h2>
+
+  <div id="deslogado">
+    <div class="abas">
+      <button type="button" class="aba ativa" data-aba="entrar">Entrar</button>
+      <button type="button" class="aba" data-aba="cadastrar">Cadastrar</button>
+    </div>
+
+    <form id="formLogin" class="form">
+      <label>E-mail ou usuário<input name="usuario" required autocomplete="username"></label>
+      <label>Senha<input name="senha" type="password" required autocomplete="current-password"></label>
+      <button class="btn zap" type="submit">Entrar</button>
+      <p class="aviso" id="msgLogin" role="status"></p>
+    </form>
+
+    <form id="formCadastro" class="form" hidden>
+      <label>Nome<input name="nome" required maxlength="80" autocomplete="name"></label>
+      <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
+      <label>Senha (mínimo 6 caracteres)<input name="senha" type="password" required minlength="6" autocomplete="new-password"></label>
+      <button class="btn zap" type="submit">Criar conta</button>
+      <p class="aviso" id="msgCadastro" role="status"></p>
+    </form>
+  </div>
+
+  <div id="logado" hidden>
+    <p id="saudacao"></p>
+    <button class="btn sec" id="btnSair" type="button">Sair</button>
+
+    <div id="painelAdmin" hidden>
+      <h3>Painel do administrador</h3>
+      <p>Para adicionar ou apagar fotos, use os formulários que aparecem no começo de cada seção (tipos de toldos, serviços realizados e tecidos).</p>
+      <h3>Mensagens recebidas</h3>
+      <div id="listaMensagens"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <p>Toldos e Estofados Boa Vista - Alterosa/MG</p>
+  <p>WhatsApp (35) 99859-7550 · Celular (35) 99706-1813</p>
+</footer>
+
+<a class="zap-fixo" href="https://wa.me/5535998597550" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+
+<script src="app.js"></script>
+</body>
+</html>

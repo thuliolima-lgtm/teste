@@ -1,0 +1,20 @@
+Site Toldos e Estofados Boa Vista
+
+Como rodar no computador:
+1. Instale o Node.js (nodejs.org, versao LTS)
+2. Abra a pasta do site no terminal e rode: node server.js
+3. Abra no navegador: http://localhost:3000
+
+Login do administrador:
+  usuario: toldos_boavista*
+  senha: 241079
+(Entre em "Entrar / Cadastrar". Depois do login, aparecem os formularios
+de adicionar foto no comeco de cada secao.)
+
+Pastas:
+  public/   -> o site (index.html, style.css, app.js, img/, uploads/)
+  data/     -> db.json (usuarios, mensagens e textos). Faca backup dessa pasta e da public/uploads
+  server.js -> o servidor
+
+Para trocar a senha do admin sem mexer no codigo, rode assim:
+  ADMIN_USER="novo_usuario" ADMIN_PASS="nova_senha" node server.js
